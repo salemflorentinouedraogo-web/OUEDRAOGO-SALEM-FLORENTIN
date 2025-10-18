@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OUEDRAOGO Salem Florentin-Curriculum Vitae</title>
+  <link rel="stylesheet" href="3.css">
+</head>
+<body>
+    
+        <header>
+ <div class="stats-bar">
+
+    </div>
+
+    <nav class="navbar">
+<button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+
+<aside class="side-panel" aria-hidden="true">
+  <button class="panel-close" aria-label="Fermer le panneau">✕</button>
+  <nav class="panel-nav">
+    <a href="acceuil.html">Accueil</a>
+    <a href="curriculum.html">Curriculum vitae</a>
+    <a href="projets.html">Projets réalisés</a>
+    <a href="certificat.html">Certifications</a>
+  </nav>
+</aside>
+        <div class="logo">
+            <img src="assets/photo.jpg" ;alt="Logo">
+            OUEDRAOGO Salem Florentin
+        </div>
+        <ul class="nav-links">
+            <li><a href="acceuil.html" >Accueil</a></li>
+            <li><a href="curriculum.html" class="active">Curriculum vitae</a></li>
+            <li><a href="projets.html">Projets réalisés</a></li>
+            <li><a href="certificat.html">Certifications</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>CURRICULUM VITAE</h1>
+        </div>
+    </div>
+    </header>
+ 
+<main>
+
+<div class="cv-title">
+    CV de OUEDRAOGO Salem Florentin
+</div>
+
+
+ <div class="cv-trigger" aria-expanded="false">
+    Cliquer ici pour voir mon curriculum vitae
+  <span class="cv-symbol" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </span>
+</div>
+<div class="title-underline2"></div>
+
+
+<div class="cv-content" id="cv-content">
+Vous avez la possiblité de consulter mon CV en deux différentes langues. D'une part en français 
+en cliquant sur <a href="https://drive.google.com/file/d/1SOZlEqMhBfa1CQSdesnWGXa8venp3eqU/view?usp=sharing" target="_blank">Voir mon CV en français</a>, puis en anglais en cliquant sur Voir mon cv en anglais.
+</div>
+</main>
+
+
+ <script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const content = document.getElementById("cv-content");
+  const trigger = document.querySelector(".cv-trigger");
+
+  trigger.addEventListener("click", () => {
+    const isHidden = content.style.display === "none" || content.style.display === "";
+    if (isHidden) {
+      content.style.display = "block";
+      trigger.classList.add("open");
+      trigger.setAttribute("aria-expanded", "true");
+    } else {
+      content.style.display = "none";
+      trigger.classList.remove("open");
+      trigger.setAttribute("aria-expanded", "false");
+    }
+  });
+});
+
+
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+       
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector(".menu-btn");
+  const sidePanel = document.querySelector(".side-panel");
+  const closeBtn = document.querySelector(".panel-close");
+  menuBtn.addEventListener("click", () => {
+    sidePanel.classList.toggle("open");});
+  closeBtn.addEventListener("click", () => {
+    sidePanel.classList.remove("open");
+  });
+
+  
+document.querySelectorAll(".panel-nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      sidePanel.classList.remove("open");
+    });
+  });
+
+
+  document.addEventListener("click", (e) => {
+    if (!sidePanel.contains(e.target) && !menuBtn.contains(e.target)) {
+      sidePanel.classList.remove("open");
+    }
+  });
+});
+
+ 
+
+
+
+        
+
+    </script>
+</body>
+</html>
+
+<body>
