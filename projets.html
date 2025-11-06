@@ -237,6 +237,25 @@ document.querySelectorAll('.project-cadre').forEach(cadre => {
     button.addEventListener('click', () => {
       showSlide(index);
     });
+    let startX = 0;
+let endX = 0;
+
+cadre.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+cadre.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  let diff = endX - startX;
+  if (Math.abs(diff) > 50) { // seuil minimal de balayage
+    if (diff > 0) {
+      // balayage vers la droite → image précédente
+      let newIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(newIndex);
+    } else {
+      // balayage vers la gauche → image suivante
+      let newIndex = (currentIndex + 1) % slides.length;
+      showSlide(newIndex);} }
   });
 });
 
@@ -269,3 +288,4 @@ document.querySelectorAll('.project-cadre').forEach(cadre => {
 </body>
 
 </html>
+
