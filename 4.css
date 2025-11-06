@@ -661,3 +661,12 @@ margin-top: 1%;flex:1;margin-left: 10%;}
     margin: 5% 3%;
   }
 }
+
+@media (max-width: 1024px) {
+  .project {
+    display: flex;
+    flex-direction: column-reverse; /* Texte au-dessus de l'image */
+    align-items: center;
+  }
+}
+
